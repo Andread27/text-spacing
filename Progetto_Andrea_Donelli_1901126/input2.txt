@@ -1,9 +1,0 @@
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-
-Vivamus volutpat semper mauris, sed congue sem facilisis et.
-Pellentesque sollicitudin diam sed est tincidunt ullamcorper.
-
-
-In bibendum velit et magna consectetur, et facilisis dui convallis.
-
-Suspendisse bibendum efficitur facilisis. Nulla facilisi.
