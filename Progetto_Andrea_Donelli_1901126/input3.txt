@@ -1,0 +1,30 @@
+Istruzioni ed esempi negli allegati. Scadenza: 23:59, 09 giugno 2023.
+ 
+Domande & Risposte
+
+
+1) se il testo dovesse contenere    spazi multipli tra due parole,    questi devono essere riportati all'interno dell'output? il dubbio sorge in quanto il testo prodotto dal programma deve risultare giustificato all'interno delle colonne, quindi volevo sapere se la spaziatura tra le parole del testo iniziale    va completamente ignorata    per giustificare il testo correttamente,  oppure è   necessario riportare gli spazi multipli nel caso vi fossero; inoltre, il dubbio sorge anche dal fatto che se  dovessero esserci più spazi tra due parole, poiché è necessario spostare    alla riga successiva parole che non entrano nello spazio restante di  una riga, riportando gli spazi multipli all'interno dell'output, si  toglie possibile   spazio a delle parole che sarebbero potute entrare   all'interno della riga.
+La spaziatura   tra due parole   del testo   originale puo'   essere ignorata.
+
+
+2) se un paragrafo termina proprio sull'ultima riga di una colonna, anche in tal caso è necessario lasciare una riga vuota dopo la sua fine? (la riga vuota sarebbe la prima riga della colonna successiva). 
+Si'. (Aggiornamento: Ripensandoci, sarebbe preferibile dal punto di vista stilistico non aggiungere la riga vuota in tal caso. Entrambe le soluzioni sono corrette - fate voi.)
+
+
+3) in questa seconda versione dell'homework ho notato che il testo input è in codifica Unicode UTF-8, volevo chiederle se fosse necessario gestire dunque caratteri che fossero rappresentabili in Unicode con UTF-8,
+oppure è semplicemente sufficiente gestire caratteri rappresentabili con 1 byte, nel range [0; 255]; nel caso invece fosse necessario gestire UTF-8, possiamo utilizzare librerie per farlo?
+strlen() conta i *byte* usati da una stringa, quindi nel caso di lettere accentate strlen() ritorna un byte in piu' per ogni lettera accentata contenuta nella stringa. Questo problema non e' di difficile soluzione: ogni char (o byte) i cui due bit piu' significativi sono esattamente 10 rappresenta un carattere 'extra' introdotto della codifica UTF8. Potete quindi scrivere una vostra strlen in mode che non conti qualsiasi carattere i cui due bit piu' significativi sono 10 (dovete usare le operazioni bit a bit): in tutto 4-5 linee di codice.
+Un'altra cosa: le funzioni della famiglia scanf sono molto utili per leggere 'parole' scartando eventuali caratteri 'bianchi' come tabs, newlines, etc. usando il formato %s. Consultate il man. 
+
+
+4) rileggendo attentamente la consegna, comprendo che ogni paragrafo termina con \n\n: mi chiedevo dunque se va gestito il caso in cui il testo contenga un singolo \n, e se sì, cosa fare in tal caso (considerato che ogni paragrafo deve terminare con \n\n, suppongo un singolo \n sia un errore dell'input?). 
+Se c'e' un singolo \n allora e' un solo paragrafo.
+
+
+5) è possibile usare la stdbool.h?
+Si'.
+
+
+6) Se per qualsiasi problema non si dovesse riuscire a preparare l'esame entro giugno e dunque anche l'homework, è possibile consegnare l'homework a settembre prima dell'appello?
+No, la scadenza e' solo quella del 9 giugno. E' pero' possibile mandare l'homework e fare lo scritto anche dopo giugno (rispettando la regola descritta nella prima lezione). 
+Ricordo inoltre che l'homework NON e' obbligatorio.
